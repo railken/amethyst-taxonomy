@@ -13,10 +13,10 @@ return [
     'table' => 'ore_vocabularies',
 
     'router' => [
-        'prefix' => 'admin/vocabularies',
+        'prefix'      => 'admin/vocabularies',
         'middlewares' => [
             \Railken\LaraOre\RequestLoggerMiddleware::class,
             'auth:api',
-        ]
-    ]
+        ],
+    ],
 ];

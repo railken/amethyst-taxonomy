@@ -4,9 +4,9 @@ namespace Railken\LaraOre\Taxonomy;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Railken\Laravel\Manager\Contracts\EntityContract;
-use Railken\LaraOre\Vocabulary\Vocabulary;
 use Illuminate\Support\Facades\Config;
+use Railken\LaraOre\Vocabulary\Vocabulary;
+use Railken\Laravel\Manager\Contracts\EntityContract;
 
 class Taxonomy extends Model implements EntityContract
 {

@@ -14,7 +14,7 @@ class VocabularyManager extends ModelManager
      * @var string
      */
     public $entity = Vocabulary::class;
-    
+
     /**
      * List of all attributes.
      *
@@ -25,7 +25,7 @@ class VocabularyManager extends ModelManager
         Attributes\Name\NameAttribute::class,
         Attributes\CreatedAt\CreatedAtAttribute::class,
         Attributes\UpdatedAt\UpdatedAtAttribute::class,
-        Attributes\DeletedAt\DeletedAtAttribute::class
+        Attributes\DeletedAt\DeletedAtAttribute::class,
     ];
 
     /**

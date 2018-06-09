@@ -2,8 +2,8 @@
 
 namespace Railken\LaraOre;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\ServiceProvider;
 use Railken\LaraOre\Api\Support\Router;
 
 class TaxonomyServiceProvider extends ServiceProvider
@@ -15,8 +15,8 @@ class TaxonomyServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([ __DIR__.'/../config/ore.taxonomy.php' => config_path('ore.taxonomy.php')], 'config');
-        $this->publishes([ __DIR__.'/../config/ore.vocabulary.php' => config_path('ore.vocabulary.php')], 'config');
+        $this->publishes([__DIR__.'/../config/ore.taxonomy.php' => config_path('ore.taxonomy.php')], 'config');
+        $this->publishes([__DIR__.'/../config/ore.vocabulary.php' => config_path('ore.vocabulary.php')], 'config');
 
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutes();

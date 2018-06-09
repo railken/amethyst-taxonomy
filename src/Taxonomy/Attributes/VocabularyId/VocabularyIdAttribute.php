@@ -5,7 +5,6 @@ namespace Railken\LaraOre\Taxonomy\Attributes\VocabularyId;
 use Railken\Laravel\Manager\Attributes\BelongsToAttribute;
 use Railken\Laravel\Manager\Contracts\EntityContract;
 use Railken\Laravel\Manager\Tokens;
-use Respect\Validation\Validator as v;
 
 class VocabularyIdAttribute extends BelongsToAttribute
 {
@@ -50,6 +49,7 @@ class VocabularyIdAttribute extends BelongsToAttribute
         Tokens::PERMISSION_FILL => 'taxonomy.attributes.vocabulary_id.fill',
         Tokens::PERMISSION_SHOW => 'taxonomy.attributes.vocabulary_id.show',
     ];
+
     /**
      * Retrieve the name of the relation.
      *

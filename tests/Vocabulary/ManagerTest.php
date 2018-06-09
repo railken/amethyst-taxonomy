@@ -2,8 +2,8 @@
 
 namespace Railken\LaraOre\Tests\Vocabulary;
 
-use Railken\LaraOre\Vocabulary\VocabularyManager;
 use Railken\LaraOre\Support\Testing\ManagerTestableTrait;
+use Railken\LaraOre\Vocabulary\VocabularyManager;
 
 class ManagerTest extends BaseTest
 {

@@ -4,8 +4,8 @@ namespace Railken\LaraOre\Vocabulary;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Railken\Laravel\Manager\Contracts\EntityContract;
 use Illuminate\Support\Facades\Config;
+use Railken\Laravel\Manager\Contracts\EntityContract;
 
 class Vocabulary extends Model implements EntityContract
 {

@@ -2,8 +2,8 @@
 
 namespace Railken\LaraOre\Tests\Taxonomy;
 
-use Railken\LaraOre\Taxonomy\TaxonomyManager;
 use Railken\LaraOre\Support\Testing\ManagerTestableTrait;
+use Railken\LaraOre\Taxonomy\TaxonomyManager;
 
 class ManagerTest extends BaseTest
 {
