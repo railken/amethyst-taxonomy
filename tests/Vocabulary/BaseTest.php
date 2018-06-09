@@ -2,8 +2,6 @@
 
 namespace Railken\LaraOre\Tests\Vocabulary;
 
-use Illuminate\Support\Facades\File;
-use Railken\LaraOre\Vocabulary\VocabularyManager;
 use Railken\Bag;
 
 abstract class BaseTest extends \Orchestra\Testbench\TestCase
@@ -14,6 +12,7 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
             \Railken\LaraOre\TaxonomyServiceProvider::class,
         ];
     }
+
     /**
      * Retrieve correct bag of parameters.
      *
@@ -22,10 +21,11 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
     public function getParameters()
     {
         $bag = new Bag();
-        $bag->set('name', "Ban");
+        $bag->set('name', 'Ban');
+
         return $bag;
     }
-    
+
     /**
      * Setup the test environment.
      */
@@ -35,7 +35,7 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         $dotenv->load();
 
         parent::setUp();
-        
+
         $this->artisan('migrate:fresh');
         $this->artisan('vendor:publish', ['--provider' => 'Railken\LaraOre\TaxonomyServiceProvider', '--force' => true]);
         $this->artisan('lara-ore:user:install');

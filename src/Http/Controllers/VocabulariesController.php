@@ -18,7 +18,7 @@ class VocabulariesController extends RestController
         'id',
         'name',
         'created_at',
-        'updated_at'
+        'updated_at',
     ];
 
     protected static $fillable = [

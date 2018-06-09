@@ -2,10 +2,8 @@
 
 namespace Railken\LaraOre\Tests\Taxonomy;
 
-use Illuminate\Support\Facades\File;
-use Railken\LaraOre\Vocabulary\VocabularyManager;
-use Railken\LaraOre\Taxonomy\TaxonomyManager;
 use Railken\Bag;
+use Railken\LaraOre\Vocabulary\VocabularyManager;
 
 abstract class BaseTest extends \Orchestra\Testbench\TestCase
 {
@@ -19,8 +17,9 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
     public function newVocabulary()
     {
         $bag = new bag();
-        $bag->set('name', "El. psy. congroo. " . microtime(true));
+        $bag->set('name', 'El. psy. congroo. '.microtime(true));
         $wm = new VocabularyManager();
+
         return $wm->create($bag)->getResource();
     }
 
@@ -32,11 +31,12 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
     public function getParameters()
     {
         $bag = new Bag();
-        $bag->set('name', "Ban");
+        $bag->set('name', 'Ban');
         $bag->set('vocabulary_id', $this->newVocabulary()->id);
+
         return $bag;
     }
-    
+
     /**
      * Setup the test environment.
      */
@@ -46,7 +46,7 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         $dotenv->load();
 
         parent::setUp();
-        
+
         $this->artisan('migrate:fresh');
         $this->artisan('vendor:publish', ['--provider' => 'Railken\LaraOre\TaxonomyServiceProvider', '--force' => true]);
         $this->artisan('lara-ore:user:install');

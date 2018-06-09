@@ -13,10 +13,10 @@ return [
     'table' => 'ore_taxonomies',
 
     'router' => [
-        'prefix' => 'admin/taxonomies',
+        'prefix'      => 'admin/taxonomies',
         'middlewares' => [
             \Railken\LaraOre\RequestLoggerMiddleware::class,
             'auth:api',
-        ]
-    ]
+        ],
+    ],
 ];

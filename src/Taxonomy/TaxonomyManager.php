@@ -14,7 +14,7 @@ class TaxonomyManager extends ModelManager
      * @var string
      */
     public $entity = Taxonomy::class;
-    
+
     /**
      * List of all attributes.
      *
@@ -26,7 +26,7 @@ class TaxonomyManager extends ModelManager
         Attributes\CreatedAt\CreatedAtAttribute::class,
         Attributes\UpdatedAt\UpdatedAtAttribute::class,
         Attributes\DeletedAt\DeletedAtAttribute::class,
-        Attributes\VocabularyId\VocabularyIdAttribute::class
+        Attributes\VocabularyId\VocabularyIdAttribute::class,
     ];
 
     /**
