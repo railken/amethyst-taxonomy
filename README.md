@@ -1,7 +1,8 @@
 # lara-ore-taxonomy
 
-[![Build Status](https://travis-ci.org/railken/lara-ore-taxonomy.svg?branch=master)](https://travis-ci.org/railken/lara-ore-taxonomy)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://img.shields.io/travis/railken/lara-ore-taxonomy/master.svg?style=flat-square)](https://travis-ci.org/railken/lara-ore-taxonomy)
+[![StyleCI](https://github.styleci.io/repos/136579704/shield?branch=master)](https://github.styleci.io/repos/136579704)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 This is a lara-ore package.
 
