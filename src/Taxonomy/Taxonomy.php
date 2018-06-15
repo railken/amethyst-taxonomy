@@ -27,8 +27,6 @@ class Taxonomy extends Model implements EntityContract
     protected $dates = ['deleted_at'];
 
     /**
-     * Get works.
-     *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function vocabulary()

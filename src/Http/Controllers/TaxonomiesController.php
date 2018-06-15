@@ -14,7 +14,7 @@ class TaxonomiesController extends RestController
     use RestTraits\RestShowTrait;
     use RestTraits\RestRemoveTrait;
 
-    protected static $query = [
+    public $queryable = [
         'id',
         'name',
         'vocabulary_id',
@@ -22,7 +22,7 @@ class TaxonomiesController extends RestController
         'updated_at',
     ];
 
-    protected static $fillable = [
+    public $fillable = [
         'name',
         'vocabulary_id',
     ];

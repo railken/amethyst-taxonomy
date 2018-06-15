@@ -14,14 +14,14 @@ class VocabulariesController extends RestController
     use RestTraits\RestShowTrait;
     use RestTraits\RestRemoveTrait;
 
-    protected static $query = [
+    public $queryable = [
         'id',
         'name',
         'created_at',
         'updated_at',
     ];
 
-    protected static $fillable = [
+    public $fillable = [
         'name',
     ];
 
