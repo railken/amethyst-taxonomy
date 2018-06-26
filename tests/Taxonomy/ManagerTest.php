@@ -4,6 +4,7 @@ namespace Railken\LaraOre\Tests\Taxonomy;
 
 use Railken\LaraOre\Support\Testing\ManagerTestableTrait;
 use Railken\LaraOre\Taxonomy\TaxonomyManager;
+use Railken\LaraOre\Taxonomy\TaxonomyFaker;
 
 class ManagerTest extends BaseTest
 {
@@ -21,6 +22,6 @@ class ManagerTest extends BaseTest
 
     public function testSuccessCommon()
     {
-        $this->commonTest($this->getManager(), $this->getParameters());
+        $this->commonTest($this->getManager(), TaxonomyFaker::make());
     }
 }

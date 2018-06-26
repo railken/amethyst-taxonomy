@@ -14,19 +14,6 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
     }
 
     /**
-     * Retrieve correct bag of parameters.
-     *
-     * @return Bag
-     */
-    public function getParameters()
-    {
-        $bag = new Bag();
-        $bag->set('name', 'Ban');
-
-        return $bag;
-    }
-
-    /**
      * Setup the test environment.
      */
     public function setUp()

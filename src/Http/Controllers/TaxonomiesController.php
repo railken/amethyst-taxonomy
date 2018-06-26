@@ -24,6 +24,7 @@ class TaxonomiesController extends RestController
 
     public $fillable = [
         'name',
+        'vocabulary',
         'vocabulary_id',
     ];
 

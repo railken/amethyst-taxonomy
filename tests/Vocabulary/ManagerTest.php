@@ -4,6 +4,7 @@ namespace Railken\LaraOre\Tests\Vocabulary;
 
 use Railken\LaraOre\Support\Testing\ManagerTestableTrait;
 use Railken\LaraOre\Vocabulary\VocabularyManager;
+use Railken\LaraOre\Vocabulary\VocabularyFaker;
 
 class ManagerTest extends BaseTest
 {
@@ -21,6 +22,6 @@ class ManagerTest extends BaseTest
 
     public function testSuccessCommon()
     {
-        $this->commonTest($this->getManager(), $this->getParameters());
+        $this->commonTest($this->getManager(), VocabularyFaker::make());
     }
 }

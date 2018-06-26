@@ -14,29 +14,6 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         ];
     }
 
-    public function newVocabulary()
-    {
-        $bag = new bag();
-        $bag->set('name', 'El. psy. congroo. '.microtime(true));
-        $wm = new VocabularyManager();
-
-        return $wm->create($bag)->getResource();
-    }
-
-    /**
-     * Retrieve correct bag of parameters.
-     *
-     * @return Bag
-     */
-    public function getParameters()
-    {
-        $bag = new Bag();
-        $bag->set('name', 'Ban');
-        $bag->set('vocabulary_id', $this->newVocabulary()->id);
-
-        return $bag;
-    }
-
     /**
      * Setup the test environment.
      */
