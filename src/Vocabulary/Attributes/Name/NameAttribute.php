@@ -29,7 +29,7 @@ class NameAttribute extends BaseAttribute
      *
      * @var bool
      */
-    protected $unique = false;
+    protected $unique = true;
 
     /**
      * List of all exceptions used in validation.
