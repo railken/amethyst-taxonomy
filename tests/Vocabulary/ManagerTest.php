@@ -22,6 +22,6 @@ class ManagerTest extends BaseTest
 
     public function testSuccessCommon()
     {
-        $this->commonTest($this->getManager(), VocabularyFaker::make());
+        $this->commonTest($this->getManager(), VocabularyFaker::make()->parameters());
     }
 }

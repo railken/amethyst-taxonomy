@@ -4,13 +4,14 @@ namespace Railken\LaraOre\Vocabulary;
 
 use Railken\Bag;
 use Faker\Factory;
+use Railken\Laravel\Manager\BaseFaker;
 
-class VocabularyFaker
+class VocabularyFaker extends BaseFaker
 {
     /**
-     * @return array
+     * @return \Railken\Bag
      */
-    public static function make()
+    public function parameters()
     {
         $faker = Factory::create();
 
