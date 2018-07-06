@@ -36,7 +36,6 @@ class TaxonomyServiceProvider extends ServiceProvider
     {
         $this->app->register(\Railken\Laravel\Manager\ManagerServiceProvider::class);
         $this->app->register(\Railken\LaraOre\ApiServiceProvider::class);
-        $this->app->register(\Railken\LaraOre\UserServiceProvider::class);
 
         $this->mergeConfigFrom(__DIR__.'/../config/ore.taxonomy.php', 'ore.taxonomy');
         $this->mergeConfigFrom(__DIR__.'/../config/ore.vocabulary.php', 'ore.vocabulary');
