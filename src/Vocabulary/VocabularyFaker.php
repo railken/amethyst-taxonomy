@@ -9,6 +9,11 @@ use Railken\Laravel\Manager\BaseFaker;
 class VocabularyFaker extends BaseFaker
 {
     /**
+     * @var string
+     */
+    protected $manager = VocabularyManager::class;
+
+    /**
      * @return \Railken\Bag
      */
     public function parameters()
