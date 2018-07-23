@@ -2,8 +2,8 @@
 
 namespace Railken\LaraOre\Vocabulary;
 
-use Railken\Bag;
 use Faker\Factory;
+use Railken\Bag;
 use Railken\Laravel\Manager\BaseFaker;
 
 class VocabularyFaker extends BaseFaker

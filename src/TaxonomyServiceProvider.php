@@ -2,6 +2,7 @@
 
 namespace Railken\LaraOre;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\ServiceProvider;
 use Railken\LaraOre\Api\Support\Router;
@@ -10,8 +11,6 @@ class TaxonomyServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
     public function boot()
     {
@@ -29,8 +28,6 @@ class TaxonomyServiceProvider extends ServiceProvider
 
     /**
      * Register bindings in the container.
-     *
-     * @return void
      */
     public function register()
     {
@@ -43,29 +40,34 @@ class TaxonomyServiceProvider extends ServiceProvider
 
     /**
      * Load routes.
-     *
-     * @return void
      */
     public function loadRoutes()
     {
-        Router::group(array_merge(Config::get('ore.taxonomy.router'), [
-            'namespace' => 'Railken\LaraOre\Http\Controllers',
-        ]), function ($router) {
-            $router->get('/', ['uses' => 'TaxonomiesController@index']);
-            $router->post('/', ['uses' => 'TaxonomiesController@create']);
-            $router->put('/{id}', ['uses' => 'TaxonomiesController@update']);
-            $router->delete('/{id}', ['uses' => 'TaxonomiesController@remove']);
-            $router->get('/{id}', ['uses' => 'TaxonomiesController@show']);
-        });
+        $config = Config::get('ore.taxonomy.http.admin');
 
-        Router::group(array_merge(Config::get('ore.vocabulary.router'), [
-            'namespace' => 'Railken\LaraOre\Http\Controllers',
-        ]), function ($router) {
-            $router->get('/', ['uses' => 'VocabulariesController@index']);
-            $router->post('/', ['uses' => 'VocabulariesController@create']);
-            $router->put('/{id}', ['uses' => 'VocabulariesController@update']);
-            $router->delete('/{id}', ['uses' => 'VocabulariesController@remove']);
-            $router->get('/{id}', ['uses' => 'VocabulariesController@show']);
-        });
+        if (Arr::get($config, 'enabled')) {
+            Router::group('admin', Arr::get($config, 'router'), function ($router) use ($config) {
+                $controller = Arr::get($config, 'controller');
+                $router->get('/', ['uses' => $controller.'@index']);
+                $router->post('/', ['uses' => $controller.'@create']);
+                $router->put('/{id}', ['uses' => $controller.'@update']);
+                $router->delete('/{id}', ['uses' => $controller.'@remove']);
+                $router->get('/{id}', ['uses' => $controller.'@show']);
+            });
+        }
+
+        $config = Config::get('ore.vocabulary.http.admin');
+
+        if (Arr::get($config, 'enabled')) {
+            Router::group('admin', Arr::get($config, 'router'), function ($router) use ($config) {
+                $controller = Arr::get($config, 'controller');
+
+                $router->get('/', ['uses' => $controller.'@index']);
+                $router->post('/', ['uses' => $controller.'@create']);
+                $router->put('/{id}', ['uses' => $controller.'@update']);
+                $router->delete('/{id}', ['uses' => $controller.'@remove']);
+                $router->get('/{id}', ['uses' => $controller.'@show']);
+            });
+        }
     }
 }

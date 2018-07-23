@@ -27,14 +27,6 @@ class Taxonomy extends Model implements EntityContract
     protected $dates = ['deleted_at'];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function vocabulary()
-    {
-        return $this->belongsTo(Vocabulary::class);
-    }
-
-    /**
      * Creates a new instance of the model.
      *
      * @param array $attributes
@@ -43,5 +35,13 @@ class Taxonomy extends Model implements EntityContract
     {
         parent::__construct($attributes);
         $this->table = Config::get('ore.taxonomy.table');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function vocabulary()
+    {
+        return $this->belongsTo(Vocabulary::class);
     }
 }

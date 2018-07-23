@@ -1,12 +1,12 @@
 <?php
 
-namespace Railken\LaraOre\Http\Controllers;
+namespace Railken\LaraOre\Http\Controllers\Admin;
 
 use Railken\LaraOre\Api\Http\Controllers\RestController;
 use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
-use Railken\LaraOre\Taxonomy\TaxonomyManager;
+use Railken\LaraOre\Vocabulary\VocabularyManager;
 
-class TaxonomiesController extends RestController
+class VocabulariesController extends RestController
 {
     use RestTraits\RestIndexTrait;
     use RestTraits\RestCreateTrait;
@@ -17,21 +17,18 @@ class TaxonomiesController extends RestController
     public $queryable = [
         'id',
         'name',
-        'vocabulary_id',
         'created_at',
         'updated_at',
     ];
 
     public $fillable = [
         'name',
-        'vocabulary',
-        'vocabulary_id',
     ];
 
     /**
      * Construct.
      */
-    public function __construct(TaxonomyManager $manager)
+    public function __construct(VocabularyManager $manager)
     {
         $this->manager = $manager;
         $this->manager->setAgent($this->getUser());

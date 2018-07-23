@@ -2,17 +2,8 @@
 
 namespace Railken\LaraOre\Tests\Vocabulary;
 
-use Railken\Bag;
-
 abstract class BaseTest extends \Orchestra\Testbench\TestCase
 {
-    protected function getPackageProviders($app)
-    {
-        return [
-            \Railken\LaraOre\TaxonomyServiceProvider::class,
-        ];
-    }
-
     /**
      * Setup the test environment.
      */
@@ -24,7 +15,14 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         parent::setUp();
 
         $this->artisan('migrate:fresh');
-        $this->artisan('vendor:publish', ['--provider' => 'Railken\LaraOre\TaxonomyServiceProvider', '--force' => true]);
+        // $this->artisan('vendor:publish', ['--provider' => 'Railken\LaraOre\TaxonomyServiceProvider', '--force' => true]);
         $this->artisan('migrate');
+    }
+
+    protected function getPackageProviders($app)
+    {
+        return [
+            \Railken\LaraOre\TaxonomyServiceProvider::class,
+        ];
     }
 }
