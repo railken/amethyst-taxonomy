@@ -2,11 +2,10 @@
 
 namespace Railken\LaraOre\Http\Controllers\Admin;
 
-use Railken\LaraOre\Api\Http\Controllers\RestController;
+use Railken\LaraOre\Api\Http\Controllers\RestConfigurableController;
 use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
-use Railken\LaraOre\Taxonomy\TaxonomyManager;
 
-class TaxonomiesController extends RestController
+class TaxonomiesController extends RestConfigurableController
 {
     use RestTraits\RestIndexTrait;
     use RestTraits\RestCreateTrait;
@@ -14,6 +13,18 @@ class TaxonomiesController extends RestController
     use RestTraits\RestShowTrait;
     use RestTraits\RestRemoveTrait;
 
+    /**
+     * The config path.
+     *
+     * @var string
+     */
+    public $config = 'ore.taxonomy';
+
+    /**
+     * The attributes that are queryable.
+     *
+     * @var array
+     */
     public $queryable = [
         'id',
         'name',
@@ -22,29 +33,14 @@ class TaxonomiesController extends RestController
         'updated_at',
     ];
 
+    /**
+     * The attributes that are fillable.
+     *
+     * @var array
+     */
     public $fillable = [
         'name',
         'vocabulary',
         'vocabulary_id',
     ];
-
-    /**
-     * Construct.
-     */
-    public function __construct(TaxonomyManager $manager)
-    {
-        $this->manager = $manager;
-        $this->manager->setAgent($this->getUser());
-        parent::__construct();
-    }
-
-    /**
-     * Create a new instance for query.
-     *
-     * @return \Illuminate\Database\Query\Builder
-     */
-    public function getQuery()
-    {
-        return $this->manager->repository->getQuery();
-    }
 }

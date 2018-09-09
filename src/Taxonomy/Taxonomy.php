@@ -17,14 +17,19 @@ class Taxonomy extends Model implements EntityContract
      *
      * @var array
      */
-    protected $fillable = ['id', 'name', 'created_at', 'updated_at', 'deleted_at', 'vocabulary_id'];
+    protected $fillable = [
+        'name',
+        'vocabulary_id',
+    ];
 
     /**
      * The attributes that should be mutated to dates.
      *
      * @var array
      */
-    protected $dates = ['deleted_at'];
+    protected $dates = [
+        'deleted_at',
+    ];
 
     /**
      * Creates a new instance of the model.
@@ -35,6 +40,7 @@ class Taxonomy extends Model implements EntityContract
     {
         parent::__construct($attributes);
         $this->table = Config::get('ore.taxonomy.table');
+        $this->fillable = array_merge($this->fillable, array_keys(Config::get('ore.taxonomy.attributes')));
     }
 
     /**

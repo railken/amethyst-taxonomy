@@ -1,13 +1,8 @@
 # lara-ore-taxonomy
 
-[![Build Status](https://img.shields.io/travis/railken/lara-ore-taxonomy/master.svg?style=flat-square)](https://travis-ci.org/railken/lara-ore-taxonomy)
-[![StyleCI](https://github.styleci.io/repos/136579704/shield?branch=master)](https://github.styleci.io/repos/136579704)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.org/railken/lara-ore-taxonomy.svg?branch=master)](https://travis-ci.org/railken/lara-ore-taxonomy)
 
-This is a lara-ore package.
-
-Provides the entity [Taxonomy](src/Taxonomy/Taxonomy.php) 
-Provides the entity [Vocabulary](src/Vocabulary/Vocabulary.php) 
+This is a [lara-ore](https://github.com/railken/lara-ore) package
 
 # Requirements
 
