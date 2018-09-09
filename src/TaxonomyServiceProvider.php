@@ -20,7 +20,7 @@ class TaxonomyServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadRoutes();
 
-        config(['ore.permission.managers' => array_merge(Config::get('ore.permission.managers', []), [
+        config(['ore.managers' => array_merge(Config::get('ore.managers', []), [
             \Railken\LaraOre\Taxonomy\TaxonomyManager::class,
             \Railken\LaraOre\Vocabulary\VocabularyManager::class,
         ])]);
