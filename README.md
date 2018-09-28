@@ -1,8 +1,8 @@
-# lara-ore-taxonomy
+# amethyst-taxonomy
 
-[![Build Status](https://travis-ci.org/railken/lara-ore-taxonomy.svg?branch=master)](https://travis-ci.org/railken/lara-ore-taxonomy)
+[![Build Status](https://travis-ci.org/railken/amethyst-taxonomy.svg?branch=master)](https://travis-ci.org/railken/amethyst-taxonomy)
 
-This is a [lara-ore](https://github.com/railken/lara-ore) package
+[Amethyst](https://github.com/railken/amethyst) package
 
 # Requirements
 
@@ -13,7 +13,7 @@ PHP 7.1 and later.
 You can install it via [Composer](https://getcomposer.org/) by typing the following command:
 
 ```bash
-composer require railken/lara-ore-taxonomy
+composer require railken/amethyst-taxonomy
 ```
 
 The package will automatically register itself.

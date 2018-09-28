@@ -12,7 +12,7 @@ class CreateVocabulariesTable extends Migration
      */
     public function up()
     {
-        Schema::create(Config::get('ore.vocabulary.table'), function (Blueprint $table) {
+        Schema::create(Config::get('amethyst.taxonomy.managers.vocabulary.table'), function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->softDeletes();
@@ -25,6 +25,6 @@ class CreateVocabulariesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(Config::get('ore.vocabulary.table'));
+        Schema::dropIfExists(Config::get('amethyst.taxonomy.managers.vocabulary.table'));
     }
 }

@@ -1,11 +1,12 @@
 <?php
 
-namespace Railken\LaraOre\Http\Controllers\Admin;
+namespace Railken\Amethyst\Http\Controllers\Admin;
 
-use Railken\LaraOre\Api\Http\Controllers\RestConfigurableController;
-use Railken\LaraOre\Api\Http\Controllers\Traits as RestTraits;
+use Railken\Amethyst\Api\Http\Controllers\RestManagerController;
+use Railken\Amethyst\Api\Http\Controllers\Traits as RestTraits;
+use Railken\Amethyst\Managers\VocabularyManager;
 
-class VocabulariesController extends RestConfigurableController
+class VocabulariesController extends RestManagerController
 {
     use RestTraits\RestIndexTrait;
     use RestTraits\RestCreateTrait;
@@ -14,30 +15,9 @@ class VocabulariesController extends RestConfigurableController
     use RestTraits\RestRemoveTrait;
 
     /**
-     * The config path.
+     * The class of the manager.
      *
      * @var string
      */
-    public $config = 'ore.vocabulary';
-
-    /**
-     * The attributes that are queryable.
-     *
-     * @var array
-     */
-    public $queryable = [
-        'id',
-        'name',
-        'created_at',
-        'updated_at',
-    ];
-
-    /**
-     * The attributes that are fillable.
-     *
-     * @var array
-     */
-    public $fillable = [
-        'name',
-    ];
+    public $class = VocabularyManager::class;
 }
