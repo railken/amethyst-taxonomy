@@ -27,8 +27,8 @@ class Taxonomy extends Model implements EntityContract
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function vocabulary()
+    public function parent()
     {
-        return $this->belongsTo(Vocabulary::class);
+        return $this->belongsTo(Taxonomy::class);
     }
 }

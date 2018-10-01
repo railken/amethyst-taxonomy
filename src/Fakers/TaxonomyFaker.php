@@ -9,15 +9,21 @@ use Railken\Lem\Faker;
 class TaxonomyFaker extends Faker
 {
     /**
+     * @param bool $parent
+     *
      * @return \Railken\Bag
      */
-    public function parameters()
+    public function parameters(bool $parent = true)
     {
         $faker = Factory::create();
 
         $bag = new Bag();
         $bag->set('name', $faker->name);
-        $bag->set('vocabulary', VocabularyFaker::make()->parameters()->toArray());
+        $bag->set('description', $faker->text);
+
+        if ($parent === true) {
+            $bag->set('parent', TaxonomyFaker::make()->parameters(false)->toArray());
+        }
 
         return $bag;
     }

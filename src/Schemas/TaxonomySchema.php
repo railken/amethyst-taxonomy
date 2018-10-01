@@ -2,7 +2,7 @@
 
 namespace Railken\Amethyst\Schemas;
 
-use Railken\Amethyst\Managers\VocabularyManager;
+use Railken\Amethyst\Managers\TaxonomyManager;
 use Railken\Lem\Attributes;
 use Railken\Lem\Schema;
 
@@ -21,9 +21,9 @@ class TaxonomySchema extends Schema
                 ->setUnique(true)
                 ->setRequired(true),
             Attributes\LongTextAttribute::make('description'),
-            Attributes\BelongsToAttribute::make('vocabulary_id')
-                ->setRelationName('vocabulary')
-                ->setRelationManager(VocabularyManager::class),
+            Attributes\BelongsToAttribute::make('taxonomy_id')
+                ->setRelationName('taxonomy')
+                ->setRelationManager(TaxonomyManager::class),
             Attributes\CreatedAtAttribute::make(),
             Attributes\UpdatedAtAttribute::make(),
             Attributes\DeletedAtAttribute::make(),

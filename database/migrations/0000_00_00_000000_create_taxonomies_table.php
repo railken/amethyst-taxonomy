@@ -15,8 +15,9 @@ class CreateTaxonomiesTable extends Migration
         Schema::create(Config::get('amethyst.taxonomy.managers.taxonomy.table'), function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('vocabulary_id')->unsigned()->nullable();
-            $table->foreign('vocabulary_id')->references('id')->on(Config::get('amethyst.taxonomy.managers.vocabulary.table'));
+            $table->text('description')->nullable();
+            $table->integer('parent_id')->unsigned()->nullable();
+            $table->foreign('parent_id')->references('id')->on(Config::get('amethyst.taxonomy.managers.taxonomy.table'));
             $table->softDeletes();
             $table->timestamps();
         });
