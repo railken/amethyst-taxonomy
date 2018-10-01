@@ -21,8 +21,8 @@ class TaxonomySchema extends Schema
                 ->setUnique(true)
                 ->setRequired(true),
             Attributes\LongTextAttribute::make('description'),
-            Attributes\BelongsToAttribute::make('taxonomy_id')
-                ->setRelationName('taxonomy')
+            Attributes\BelongsToAttribute::make('parent_id')
+                ->setRelationName('parent')
                 ->setRelationManager(TaxonomyManager::class),
             Attributes\CreatedAtAttribute::make(),
             Attributes\UpdatedAtAttribute::make(),
