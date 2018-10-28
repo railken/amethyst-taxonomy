@@ -25,9 +25,9 @@ class TaxonomyTest extends BaseTest
     protected $group = 'admin';
 
     /**
-     * Base path config.
+     * Route name.
      *
      * @var string
      */
-    protected $config = 'amethyst.taxonomy.http.admin.taxonomy';
+    protected $route = 'admin.taxonomy';
 }

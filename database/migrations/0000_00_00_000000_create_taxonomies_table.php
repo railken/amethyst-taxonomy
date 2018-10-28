@@ -12,14 +12,14 @@ class CreateTaxonomiesTable extends Migration
      */
     public function up()
     {
-        Schema::create(Config::get('amethyst.taxonomy.managers.taxonomy.table'), function (Blueprint $table) {
+        Schema::create(Config::get('amethyst.taxonomy.data.taxonomy.table'), function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
             $table->text('description')->nullable();
             $table->boolean('enabled')->default(1);
             $table->text('notes')->nullable();
             $table->integer('parent_id')->unsigned()->nullable();
-            $table->foreign('parent_id')->references('id')->on(Config::get('amethyst.taxonomy.managers.taxonomy.table'));
+            $table->foreign('parent_id')->references('id')->on(Config::get('amethyst.taxonomy.data.taxonomy.table'));
             $table->softDeletes();
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ class CreateTaxonomiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(Config::get('amethyst.taxonomy.managers.taxonomy.table'));
+        Schema::dropIfExists(Config::get('amethyst.taxonomy.data.taxonomy.table'));
     }
 }
