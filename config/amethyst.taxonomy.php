@@ -35,11 +35,11 @@ return [
     'http' => [
         'admin' => [
             'taxonomy' => [
-                'enabled'     => true,
-                'controller'  => Railken\Amethyst\Http\Controllers\Admin\TaxonomiesController::class,
-                'router'      => [
-                    'as'        => 'taxonomy.',
-                    'prefix'    => '/taxonomies',
+                'enabled'    => true,
+                'controller' => Railken\Amethyst\Http\Controllers\Admin\TaxonomiesController::class,
+                'router'     => [
+                    'as'     => 'taxonomy.',
+                    'prefix' => '/taxonomies',
                 ],
             ],
         ],
