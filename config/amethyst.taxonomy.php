@@ -21,6 +21,7 @@ return [
             'authorizer' => Railken\Amethyst\Authorizers\TaxonomyAuthorizer::class,
             'faker'      => Railken\Amethyst\Fakers\TaxonomyFaker::class,
             'manager'    => Railken\Amethyst\Managers\TaxonomyManager::class,
+            'seeds'      => [],
         ],
     ],
 

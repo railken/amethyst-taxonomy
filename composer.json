@@ -14,7 +14,8 @@
     },
     "autoload": {
         "psr-4" : {
-            "Railken\\Amethyst\\" : "src/"
+            "Railken\\Amethyst\\" : "src/",
+            "Railken\\Amethyst\\Database\\Seeds\\": "database/seeds/"
         }
     },
     "autoload-dev": {
