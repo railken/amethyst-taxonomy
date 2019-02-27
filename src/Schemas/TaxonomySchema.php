@@ -18,7 +18,6 @@ class TaxonomySchema extends Schema
         return [
             Attributes\IdAttribute::make(),
             Attributes\TextAttribute::make('name')
-                ->setUnique(true)
                 ->setRequired(true),
             Attributes\LongTextAttribute::make('description'),
             Attributes\LongTextAttribute::make('notes'),

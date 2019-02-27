@@ -14,12 +14,13 @@ class CreateTaxonomiesTable extends Migration
     {
         Schema::create(Config::get('amethyst.taxonomy.data.taxonomy.table'), function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
+            $table->string('name');
             $table->text('description')->nullable();
             $table->boolean('enabled')->default(1);
             $table->text('notes')->nullable();
             $table->integer('parent_id')->unsigned()->nullable();
             $table->foreign('parent_id')->references('id')->on(Config::get('amethyst.taxonomy.data.taxonomy.table'));
+            $table->unique(['name', 'parent_id']);
             $table->softDeletes();
             $table->timestamps();
         });
