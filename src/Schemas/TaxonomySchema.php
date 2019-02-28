@@ -2,6 +2,7 @@
 
 namespace Railken\Amethyst\Schemas;
 
+use Railken\Amethyst\Attributes\TaxonomyAttribute;
 use Railken\Amethyst\Managers\TaxonomyManager;
 use Railken\Lem\Attributes;
 use Railken\Lem\Schema;
@@ -22,7 +23,7 @@ class TaxonomySchema extends Schema
             Attributes\LongTextAttribute::make('description'),
             Attributes\LongTextAttribute::make('notes'),
             Attributes\BooleanAttribute::make('enabled'),
-            Attributes\BelongsToAttribute::make('parent_id')
+            TaxonomyAttribute::make('parent_id')
                 ->setRelationName('parent')
                 ->setRelationManager(TaxonomyManager::class),
             Attributes\CreatedAtAttribute::make(),

@@ -2,6 +2,7 @@
 
 namespace Railken\Amethyst\Attributes;
 
+use Railken\Bag;
 use Railken\Lem\Attributes\BelongsToAttribute;
 use Railken\Lem\Contracts\EntityContract;
 
@@ -83,5 +84,15 @@ class TaxonomyAttribute extends BelongsToAttribute
         }
 
         return ($this->getTaxonomyName() !== null && $value->parent_id === $this->getTaxonomy($entity)->id) || $this->getTaxonomyName() === null;
+    }
+
+    /**
+     * @param Bag $parameters
+     *
+     * @return Bag
+     */
+    public function filterRelationParameters(Bag $parameters): Bag
+    {
+        return (new Bag($parameters))->only(['name', 'parent_id']);
     }
 }
