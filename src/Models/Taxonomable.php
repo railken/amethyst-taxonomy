@@ -23,6 +23,14 @@ class Taxonomable extends Model implements EntityContract
     }
 
     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function taxonomy()
+    {
+        return $this->belongsTo(Taxonomy::class);
+    }
+
+    /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
     public function taxonomable()

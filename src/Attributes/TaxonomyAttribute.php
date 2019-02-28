@@ -87,11 +87,12 @@ class TaxonomyAttribute extends BelongsToAttribute
     }
 
     /**
-     * @param Bag $parameters
+     * @param EntityContract $entity
+     * @param Bag            $parameters
      *
      * @return Bag
      */
-    public function filterRelationParameters(Bag $parameters): Bag
+    public function filterRelationParameters(EntityContract $entity, Bag $parameters): Bag
     {
         return (new Bag($parameters))->only(['name', 'parent_id']);
     }
