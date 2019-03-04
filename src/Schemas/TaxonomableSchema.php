@@ -5,6 +5,7 @@ namespace Railken\Amethyst\Schemas;
 use Illuminate\Support\Facades\Config;
 use Railken\Amethyst\Managers\TaxonomyManager;
 use Railken\Lem\Attributes;
+use Railken\Lem\Contracts\EntityContract;
 use Railken\Lem\Schema;
 
 class TaxonomableSchema extends Schema
@@ -20,6 +21,10 @@ class TaxonomableSchema extends Schema
 
         return [
             Attributes\IdAttribute::make(),
+            Attributes\TextAttribute::make('relation')
+                ->setDefault(function (EntityContract $entity) {
+                    return 'default';
+                }),
             Attributes\BelongsToAttribute::make('taxonomy_id')
                 ->setRelationName('taxonomy')
                 ->setRelationManager(TaxonomyManager::class)

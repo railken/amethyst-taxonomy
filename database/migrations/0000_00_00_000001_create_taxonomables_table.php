@@ -14,6 +14,7 @@ class CreateTaxonomablesTable extends Migration
     {
         Schema::create(Config::get('amethyst.taxonomy.data.taxonomable.table'), function (Blueprint $table) {
             $table->increments('id');
+            $table->string('relation')->nullable();
             $table->integer('taxonomy_id')->unsigned();
             $table->foreign('taxonomy_id')->references('id')->on(Config::get('amethyst.taxonomy.data.taxonomy.table'));
             $table->string('taxonomable_type');
