@@ -17,4 +17,4 @@ return [
             'description' => 'Data ID which this entity is associated'
         ]
     ]
-]
+];

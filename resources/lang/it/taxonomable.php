@@ -17,4 +17,4 @@ return [
             'description' => 'L'ID del dato con cui è collegato'
         ]
     ]
-]
+];
