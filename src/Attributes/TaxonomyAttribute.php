@@ -96,4 +96,14 @@ class TaxonomyAttribute extends BelongsToAttribute
     {
         return (new Bag($parameters))->only(['name', 'parent_id']);
     }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+       return 'BelongsTo';
+    }
 }
