@@ -98,13 +98,13 @@ class TaxonomyAttribute extends BelongsToAttribute
     }
 
     /**
-     * Get type
+     * Get type.
      *
      * @return string
      */
     public function getType()
     {
-       return 'BelongsTo';
+        return 'BelongsTo';
     }
 
     /**
@@ -116,8 +116,8 @@ class TaxonomyAttribute extends BelongsToAttribute
     {
         return [
             'constraint' => [
-                'parent_id' => $this->getTaxonomyName() ? $this->getTaxonomy($this->getManager()->newEntity())->id : null
-            ]
+                'parent_id' => $this->getTaxonomyName() ? $this->getTaxonomy($this->getManager()->newEntity())->id : null,
+            ],
         ];
     }
 }

@@ -13,7 +13,7 @@ abstract class BaseTest extends \Orchestra\Testbench\TestCase
         $dotenv->load();
 
         parent::setUp();
-        
+
         app('amethyst')->pushMorphRelation('taxonomable', 'taxonomable', 'foo');
 
         $this->artisan('migrate:fresh');
