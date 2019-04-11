@@ -18,7 +18,7 @@ class TaxonomableFaker extends Faker
         $bag = new Bag();
         $bag->set('relation', 'faker');
         $bag->set('taxonomy', TaxonomyFaker::make()->parameters()->toArray());
-        $bag->set('taxonomable_type', \Railken\Amethyst\Models\Foo::class);
+        $bag->set('taxonomable_type', 'foo');
         $bag->set('taxonomable', FooFaker::make()->parameters()->toArray());
 
         return $bag;

@@ -17,8 +17,6 @@ class TaxonomableSchema extends Schema
      */
     public function getAttributes()
     {
-        $taxonomableConfig = Config::get('amethyst.taxonomy.data.taxonomable.attributes.taxonomable.options');
-
         return [
             Attributes\IdAttribute::make(),
             Attributes\TextAttribute::make('relation')
@@ -29,12 +27,12 @@ class TaxonomableSchema extends Schema
                 ->setRelationName('taxonomy')
                 ->setRelationManager(TaxonomyManager::class)
                 ->setRequired(true),
-            Attributes\EnumAttribute::make('taxonomable_type', array_keys($taxonomableConfig))
+            Attributes\EnumAttribute::make('taxonomable_type', app('amethyst')->getMorphListable('taxonomable', 'taxonomable'))
                 ->setRequired(true),
             Attributes\MorphToAttribute::make('taxonomable_id')
                 ->setRelationKey('taxonomable_type')
                 ->setRelationName('taxonomable')
-                ->setRelations($taxonomableConfig)
+                ->setRelations(app('amethyst')->getMorphRelationable('taxonomable', 'taxonomable'))
                 ->setRequired(true),
             Attributes\CreatedAtAttribute::make(),
             Attributes\UpdatedAtAttribute::make(),
