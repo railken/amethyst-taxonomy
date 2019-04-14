@@ -13,7 +13,7 @@ class TaxonomyServiceProvider extends CommonServiceProvider
     public function register()
     {
         parent::register();
-        
+
         $this->app->singleton('amethyst.taxonomy', function ($app) {
             return new \Railken\Amethyst\Helpers\Dictionary();
         });
