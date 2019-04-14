@@ -14,7 +14,7 @@ return [
         ],
         'taxonomable_id' => [
             'label' => 'Taxonomobale ID',
-            'description' => 'L'ID del dato con cui è collegato'
+            'description' => 'L\'ID del dato con cui è collegato'
         ]
     ]
 ];
