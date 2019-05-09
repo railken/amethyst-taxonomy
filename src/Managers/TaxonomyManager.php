@@ -13,4 +13,18 @@ class TaxonomyManager extends Manager
      * @var string
      */
     protected $config = 'amethyst.taxonomy.data.taxonomy';
+
+    /**
+     * Describe extra actions.
+     *
+     * @return array
+     */
+    public function getDescriptor()
+    {
+        return [
+            'tree' => [
+                'parent'   => 'parent_id',
+            ],
+        ];
+    }
 }
