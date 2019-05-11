@@ -29,7 +29,7 @@ class Taxonomy extends Model implements EntityContract
      */
     public function parent(): BelongsTo
     {
-        return $this->belongsTo(Taxonomy::class);
+        return $this->belongsTo(config('amethyst.taxonomy.data.taxonomy.model'));
     }
 
     /**
@@ -37,6 +37,6 @@ class Taxonomy extends Model implements EntityContract
      */
     public function children(): HasMany
     {
-        return $this->hasMany(Taxonomy::class, 'parent_id');
+        return $this->hasMany(config('amethyst.taxonomy.data.taxonomy.model'), 'parent_id');
     }
 }
