@@ -21,7 +21,6 @@ class TaxonomySchema extends Schema
             Attributes\TextAttribute::make('name')
                 ->setRequired(true),
             Attributes\LongTextAttribute::make('description'),
-            Attributes\LongTextAttribute::make('notes'),
             Attributes\BooleanAttribute::make('enabled'),
             TaxonomyAttribute::make('parent_id')
                 ->setRelationName('parent')
