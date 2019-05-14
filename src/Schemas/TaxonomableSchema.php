@@ -34,8 +34,7 @@ class TaxonomableSchema extends Schema
                 ->setRelations(app('amethyst')->getMorphRelationable('taxonomable', 'taxonomable'))
                 ->setRequired(true),
             Attributes\CreatedAtAttribute::make(),
-            Attributes\UpdatedAtAttribute::make(),
-            Attributes\DeletedAtAttribute::make(),
+            Attributes\UpdatedAtAttribute::make()
         ];
     }
 }

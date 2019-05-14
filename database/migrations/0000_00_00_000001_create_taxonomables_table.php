@@ -20,7 +20,6 @@ class CreateTaxonomablesTable extends Migration
             $table->string('taxonomable_type');
             $table->integer('taxonomable_id')->unsigend();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

@@ -21,6 +21,7 @@ class TaxonomyFaker extends Faker
         $bag->set('name', $faker->name);
         $bag->set('description', $faker->text);
         $bag->set('enabled', 1);
+        $bag->set('weight', 1);
 
         if ($parent === true) {
             $bag->set('parent', TaxonomyFaker::make()->parameters(false)->toArray());

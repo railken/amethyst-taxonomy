@@ -25,6 +25,7 @@ class TaxonomySchema extends Schema
             TaxonomyAttribute::make('parent_id')
                 ->setRelationName('parent')
                 ->setRelationManager(TaxonomyManager::class),
+            Attributes\NumberAttribute::make('weight'),
             Attributes\CreatedAtAttribute::make(),
             Attributes\UpdatedAtAttribute::make(),
             Attributes\DeletedAtAttribute::make(),
