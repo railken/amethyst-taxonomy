@@ -3,11 +3,9 @@
 namespace Railken\Amethyst\Helpers;
 
 use Illuminate\Support\Facades\Config;
-use Illuminate\Database\Eloquent\Relations\MorphToMany;
-use Railken\Cacheable\CacheableTrait;
-use Railken\Cacheable\CacheableContract;
 use Railken\Amethyst\Models\Taxonomy;
-use Railken\Amethyst\Models\Taxonomable;
+use Railken\Cacheable\CacheableContract;
+use Railken\Cacheable\CacheableTrait;
 
 class Dictionary implements CacheableContract
 {
@@ -56,7 +54,7 @@ class Dictionary implements CacheableContract
             ->called($name)
             ->foreignPivotKey('taxonomy_id')
             ->relatedPivotKey('taxonomable_id')
-            ->when(function($relation) use ($parentName) {
+            ->when(function ($relation) use ($parentName) {
                 return $relation->where('parent_id', $this->getTaxonomyIdByNameCached($parentName));
             });
 
