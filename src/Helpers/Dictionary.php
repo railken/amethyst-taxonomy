@@ -55,7 +55,9 @@ class Dictionary implements CacheableContract
             ->foreignPivotKey('taxonomy_id')
             ->relatedPivotKey('taxonomable_id')
             ->when(function ($relation) use ($parentName) {
-                return $relation->where('parent_id', $this->getTaxonomyIdByNameCached($parentName));
+                return $relation
+                    ->withPivotValue('relation', $parentName)
+                    ->where('parent_id', $this->getTaxonomyIdByNameCached($parentName));
             });
 
         app('amethyst')->resolve($builder);
