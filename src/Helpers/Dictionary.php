@@ -52,8 +52,8 @@ class Dictionary implements CacheableContract
             ->to('taxonomy')
             ->using('taxonomable')
             ->called($name)
-            ->foreignPivotKey('taxonomy_id')
-            ->relatedPivotKey('taxonomable_id')
+            ->foreignPivotKey('taxonomable_id')
+            ->relatedPivotKey('taxonomy_id')
             ->when(function ($relation) use ($parentName) {
                 return $relation
                     ->withPivotValue('relation', $parentName)
