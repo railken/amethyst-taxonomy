@@ -11,7 +11,7 @@ use Railken\Lem\Contracts\EntityContract;
 class Taxonomable extends MorphPivot implements EntityContract
 {
     use ConfigurableModel;
-    
+
     /**
      * Indicates if the IDs are auto-incrementing.
      *
