@@ -18,6 +18,32 @@ class Taxonomable extends MorphPivot implements EntityContract
      * @var bool
      */
     public $incrementing = true;
+    
+    /**
+     * Get the query builder for a delete operation on the pivot.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    protected function getDeleteQuery()
+    {
+        return $this->id ? $this->newQuery()->where('id', $this->id) : parent::getDeleteQuery();
+    }
+
+    /**
+     * Delete the pivot model record from the database.
+     *
+     * @return int
+     */
+    public function delete()
+    {
+        $query = $this->getDeleteQuery();
+
+        if ($this->morphClass) {
+            $query->where($this->morphType, $this->morphClass);
+        }
+
+        return $query->delete();
+    }
 
     /**
      * Create a new Eloquent model instance.
