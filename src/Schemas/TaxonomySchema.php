@@ -20,6 +20,7 @@ class TaxonomySchema extends Schema
             Attributes\IdAttribute::make(),
             Attributes\TextAttribute::make('name')
                 ->setRequired(true),
+            Attributes\TextAttribute::make('code'),
             Attributes\LongTextAttribute::make('description'),
             Attributes\BooleanAttribute::make('enabled'),
             TaxonomyAttribute::make('parent_id')

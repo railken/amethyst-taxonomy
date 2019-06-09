@@ -15,6 +15,7 @@ class CreateTaxonomiesTable extends Migration
         Schema::create(Config::get('amethyst.taxonomy.data.taxonomy.table'), function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->index();
+            $table->string('code')->nullable();
             $table->text('description')->nullable();
             $table->boolean('enabled')->default(1);
             $table->integer('weight')->default(0);
