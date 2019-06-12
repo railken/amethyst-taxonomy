@@ -18,15 +18,16 @@ class Taxonomable extends MorphPivot implements EntityContract
      * @var bool
      */
     public $incrementing = true;
-    
+
     /**
-     * Get the query builder for a delete operation on the pivot.
+     * Create a new Eloquent model instance.
      *
-     * @return \Illuminate\Database\Eloquent\Builder
+     * @param array $attributes
      */
-    protected function getDeleteQuery()
+    public function __construct(array $attributes = [])
     {
-        return $this->id ? $this->newQuery()->where('id', $this->id) : parent::getDeleteQuery();
+        $this->ini('amethyst.taxonomy.data.taxonomable');
+        parent::__construct($attributes);
     }
 
     /**
@@ -46,17 +47,6 @@ class Taxonomable extends MorphPivot implements EntityContract
     }
 
     /**
-     * Create a new Eloquent model instance.
-     *
-     * @param array $attributes
-     */
-    public function __construct(array $attributes = [])
-    {
-        $this->ini('amethyst.taxonomy.data.taxonomable');
-        parent::__construct($attributes);
-    }
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function taxonomy(): BelongsTo
@@ -70,5 +60,15 @@ class Taxonomable extends MorphPivot implements EntityContract
     public function taxonomable(): MorphTo
     {
         return $this->morphTo();
+    }
+
+    /**
+     * Get the query builder for a delete operation on the pivot.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    protected function getDeleteQuery()
+    {
+        return $this->id ? $this->newQuery()->where('id', $this->id) : parent::getDeleteQuery();
     }
 }
