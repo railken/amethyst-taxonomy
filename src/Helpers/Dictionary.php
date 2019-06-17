@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Config;
 use Railken\Amethyst\Models\Taxonomy;
 use Railken\Cacheable\CacheableContract;
 use Railken\Cacheable\CacheableTrait;
+use Illuminate\Support\Arr;
 
 class Dictionary implements CacheableContract
 {
@@ -46,20 +47,15 @@ class Dictionary implements CacheableContract
         return isset(static::$list[$namespace]) ? static::$list[$namespace] : null;
     }
 
-    public function addDictionary(string $data, string $parentName, string $name)
-    {
-        $builder = app('amethyst')->createMorphToMany($data)
-            ->to('taxonomy')
-            ->using('taxonomable')
-            ->called($name)
-            ->foreignPivotKey('taxonomable_id')
-            ->relatedPivotKey('taxonomy_id')
-            ->when(function ($relation) use ($parentName) {
-                return $relation
-                    ->withPivotValue('relation', $parentName)
-                    ->where('parent_id', $this->getTaxonomyIdByNameCached($parentName));
-            });
+    public function addDictionary(string $data, string $parentName, string $method)
+    {   
+        app('amethyst')->parseMorph('taxonomable', 'taxonomable', $data);
 
-        app('amethyst')->resolve($builder);
+        $data = Arr::get(app('amethyst')->findDataByName($data), 'model');
+
+        $data::morph_to_many($method, config('amethyst.taxonomy.data.taxonomy.model'), 'taxonomable', config('amethyst.taxonomy.data.taxonomable.table'), 'taxonomable_id', 'taxonomy_id')
+            ->using(config('amethyst.taxonomy.data.taxonomable.model'))
+            ->withPivotValue('relation', $parentName)
+            ->where('parent_id', $this->getTaxonomyIdByNameCached($parentName));
     }
 }
