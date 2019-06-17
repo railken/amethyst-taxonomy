@@ -2,11 +2,11 @@
 
 namespace Railken\Amethyst\Helpers;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
 use Railken\Amethyst\Models\Taxonomy;
 use Railken\Cacheable\CacheableContract;
 use Railken\Cacheable\CacheableTrait;
-use Illuminate\Support\Arr;
 
 class Dictionary implements CacheableContract
 {
@@ -48,7 +48,7 @@ class Dictionary implements CacheableContract
     }
 
     public function addDictionary(string $data, string $parentName, string $method)
-    {   
+    {
         app('amethyst')->parseMorph('taxonomable', 'taxonomable', $data);
 
         $data = Arr::get(app('amethyst')->findDataByName($data), 'model');
