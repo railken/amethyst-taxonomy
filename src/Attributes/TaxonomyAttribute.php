@@ -1,6 +1,6 @@
 <?php
 
-namespace Railken\Amethyst\Attributes;
+namespace Amethyst\Attributes;
 
 use Railken\Bag;
 use Railken\Lem\Attributes\BelongsToAttribute;
@@ -18,7 +18,7 @@ class TaxonomyAttribute extends BelongsToAttribute
     /**
      * @var string
      */
-    protected $relationManager = \Railken\Amethyst\Managers\TaxonomyManager::class;
+    protected $relationManager = \Amethyst\Managers\TaxonomyManager::class;
 
     /**
      * Create a new instance.
@@ -62,7 +62,7 @@ class TaxonomyAttribute extends BelongsToAttribute
      *
      * @param EntityContract $entity
      *
-     * @return \Railken\Amethyst\Models\Taxonomy
+     * @return \Amethyst\Models\Taxonomy
      */
     public function getTaxonomy(EntityContract $entity)
     {

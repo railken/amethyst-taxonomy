@@ -1,10 +1,10 @@
 <?php
 
-namespace Railken\Amethyst\Helpers;
+namespace Amethyst\Helpers;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
-use Railken\Amethyst\Models\Taxonomy;
+use Amethyst\Models\Taxonomy;
 use Railken\Cacheable\CacheableContract;
 use Railken\Cacheable\CacheableTrait;
 

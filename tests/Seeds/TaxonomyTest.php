@@ -1,10 +1,10 @@
 <?php
 
-namespace Railken\Amethyst\Tests\Seeds;
+namespace Amethyst\Tests\Seeds;
 
 use Illuminate\Support\Facades\Config;
-use Railken\Amethyst\Database\Seeds\TaxonomySeeder;
-use Railken\Amethyst\Tests\BaseTest;
+use Amethyst\Database\Seeds\TaxonomySeeder;
+use Amethyst\Tests\BaseTest;
 
 class TaxonomyTest extends BaseTest
 {

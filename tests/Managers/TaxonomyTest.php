@@ -1,10 +1,10 @@
 <?php
 
-namespace Railken\Amethyst\Tests\Managers;
+namespace Amethyst\Tests\Managers;
 
-use Railken\Amethyst\Fakers\TaxonomyFaker;
-use Railken\Amethyst\Managers\TaxonomyManager;
-use Railken\Amethyst\Tests\BaseTest;
+use Amethyst\Fakers\TaxonomyFaker;
+use Amethyst\Managers\TaxonomyManager;
+use Amethyst\Tests\BaseTest;
 use Railken\Lem\Support\Testing\TestableBaseTrait;
 
 class TaxonomyTest extends BaseTest

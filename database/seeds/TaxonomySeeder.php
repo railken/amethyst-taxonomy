@@ -1,10 +1,10 @@
 <?php
 
-namespace Railken\Amethyst\Database\Seeds;
+namespace Amethyst\Database\Seeds;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Config;
-use Railken\Amethyst\Managers\TaxonomyManager;
+use Amethyst\Managers\TaxonomyManager;
 
 class TaxonomySeeder extends Seeder
 {

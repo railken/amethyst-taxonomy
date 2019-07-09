@@ -1,8 +1,8 @@
 # amethyst-taxonomy
 
-[![Build Status](https://travis-ci.org/railken/amethyst-taxonomy.svg?branch=master)](https://travis-ci.org/railken/amethyst-taxonomy)
+[![Build Status](https://travis-ci.org/amethyst-php/taxonomy.svg?branch=master)](https://travis-ci.org/amethyst-php/taxonomy)
 
-[Amethyst](https://github.com/railken/amethyst) package
+[Amethyst](https://github.com/amethyst-php/amethyst) package
 
 # Requirements
 
@@ -13,7 +13,7 @@ PHP 7.1 and later.
 You can install it via [Composer](https://getcomposer.org/) by typing the following command:
 
 ```bash
-composer require railken/amethyst-taxonomy
+composer require amethyst/taxonomy
 ```
 
 The package will automatically register itself.

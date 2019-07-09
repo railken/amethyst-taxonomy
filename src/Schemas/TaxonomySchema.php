@@ -1,9 +1,9 @@
 <?php
 
-namespace Railken\Amethyst\Schemas;
+namespace Amethyst\Schemas;
 
-use Railken\Amethyst\Attributes\TaxonomyAttribute;
-use Railken\Amethyst\Managers\TaxonomyManager;
+use Amethyst\Attributes\TaxonomyAttribute;
+use Amethyst\Managers\TaxonomyManager;
 use Railken\Lem\Attributes;
 use Railken\Lem\Schema;
 
