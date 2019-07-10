@@ -2,9 +2,9 @@
 
 namespace Amethyst\Database\Seeds;
 
+use Amethyst\Managers\TaxonomyManager;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Config;
-use Amethyst\Managers\TaxonomyManager;
 
 class TaxonomySeeder extends Seeder
 {

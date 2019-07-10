@@ -2,9 +2,9 @@
 
 namespace Amethyst\Helpers;
 
+use Amethyst\Models\Taxonomy;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
-use Amethyst\Models\Taxonomy;
 use Railken\Cacheable\CacheableContract;
 use Railken\Cacheable\CacheableTrait;
 

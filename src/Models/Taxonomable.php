@@ -2,10 +2,10 @@
 
 namespace Amethyst\Models;
 
+use Amethyst\Common\ConfigurableModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphPivot;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Amethyst\Common\ConfigurableModel;
 use Railken\Lem\Contracts\EntityContract;
 
 class Taxonomable extends MorphPivot implements EntityContract

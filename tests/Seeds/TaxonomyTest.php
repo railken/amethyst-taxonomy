@@ -2,9 +2,9 @@
 
 namespace Amethyst\Tests\Seeds;
 
-use Illuminate\Support\Facades\Config;
 use Amethyst\Database\Seeds\TaxonomySeeder;
 use Amethyst\Tests\BaseTest;
+use Illuminate\Support\Facades\Config;
 
 class TaxonomyTest extends BaseTest
 {
