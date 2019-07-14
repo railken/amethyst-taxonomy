@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\Config;
 use Railken\Cacheable\CacheableContract;
 use Railken\Cacheable\CacheableTrait;
 
+/**
+ * @method int getTaxonomyIdByNameCached(string $name)
+ */
 class Dictionary implements CacheableContract
 {
     use CacheableTrait;
