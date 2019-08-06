@@ -22,7 +22,10 @@ class TaxonomySchema extends Schema
                 ->setRequired(true),
             Attributes\TextAttribute::make('code'),
             Attributes\LongTextAttribute::make('description'),
-            Attributes\BooleanAttribute::make('enabled'),
+            Attributes\BooleanAttribute::make('enabled')
+                ->setDefault(function ($entity) {
+                    return true;
+                }),
             TaxonomyAttribute::make('parent_id')
                 ->setRelationName('parent')
                 ->setRelationManager(TaxonomyManager::class),
