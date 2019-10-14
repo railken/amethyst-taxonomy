@@ -19,6 +19,7 @@ class CreateTaxonomiesTable extends Migration
             $table->text('description')->nullable();
             $table->boolean('enabled')->default(1);
             $table->integer('weight')->default(0);
+            $table->string('icon')->nullable();
             $table->integer('parent_id')->unsigned()->nullable();
             $table->foreign('parent_id')->references('id')->on(Config::get('amethyst.taxonomy.data.taxonomy.table'));
             $table->softDeletes();

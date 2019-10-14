@@ -30,6 +30,7 @@ class TaxonomySchema extends Schema
                 ->setRelationName('parent')
                 ->setRelationManager(TaxonomyManager::class),
             Attributes\NumberAttribute::make('weight'),
+            Attributes\TextAttribute::make('icon'),
             Attributes\CreatedAtAttribute::make(),
             Attributes\UpdatedAtAttribute::make(),
             Attributes\DeletedAtAttribute::make(),
