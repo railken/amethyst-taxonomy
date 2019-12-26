@@ -59,6 +59,6 @@ class Dictionary implements CacheableContract
         $data::morph_to_many($method, config('amethyst.taxonomy.data.taxonomy.model'), 'taxonomable', config('amethyst.taxonomy.data.taxonomable.table'), 'taxonomable_id', 'taxonomy_id')
             ->using(config('amethyst.taxonomy.data.taxonomable.model'))
             ->withPivotValue('relation', $parentName)
-            ->where('parent_id', $this->getTaxonomyIdByNameCached($parentName));
+            ->where(config('amethyst.taxonomy.data.taxonomy.table').'.parent_id', $this->getTaxonomyIdByNameCached($parentName));
     }
 }
