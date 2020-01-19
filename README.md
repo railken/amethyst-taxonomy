@@ -1,6 +1,6 @@
 # amethyst-taxonomy
 
-[![Build Status](https://travis-ci.org/amethyst-php/taxonomy.svg?branch=master)](https://travis-ci.org/amethyst-php/taxonomy)
+[![Action Status](https://github.com/amethyst-php/taxonomy/workflows/test/badge.svg)](https://github.com/amethyst-php/taxonomy/actions)
 
 [Amethyst](https://github.com/amethyst-php/amethyst) package
 

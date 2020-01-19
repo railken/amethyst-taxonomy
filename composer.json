@@ -3,14 +3,14 @@
     "keywords": ["api"],
     "license": "MIT",
     "require": {
-        "php": ">=7.1",
-        "amethyst/common": "0.1.*"
+        "php": ">=7.2",
+        "amethyst/core": "0.2.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "~7.1",
-        "orchestra/testbench": "3.*",
+        "phpunit/phpunit": "*",
+        "orchestra/testbench": "*",
         "friendsofphp/php-cs-fixer": "^2.8",
-        "amethyst/foo": "0.1.*"
+        "amethyst/foo": "0.2.*"
     },
     "autoload": {
         "psr-4" : {

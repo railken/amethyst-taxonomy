@@ -40,4 +40,13 @@ class Taxonomy extends Model implements EntityContract
     {
         return $this->hasMany(config('amethyst.taxonomy.data.taxonomy.model'), 'parent_id');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function taxonomables(): HasMany
+    {
+        return $this->hasMany(config('amethyst.taxonomy.data.taxonomable.model'), 'taxonomy_id');
+    }
+
 }
