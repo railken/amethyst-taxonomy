@@ -48,5 +48,4 @@ class Taxonomy extends Model implements EntityContract
     {
         return $this->hasMany(config('amethyst.taxonomy.data.taxonomable.model'), 'taxonomy_id');
     }
-
 }
