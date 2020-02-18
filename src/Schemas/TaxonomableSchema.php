@@ -26,12 +26,12 @@ class TaxonomableSchema extends Schema
                 ->setRelationName('taxonomy')
                 ->setRelationManager(TaxonomyManager::class)
                 ->setRequired(true),
-            Attributes\EnumAttribute::make('taxonomable_type', app('amethyst')->getMorphListable('taxonomable', 'taxonomable'))
+            Attributes\EnumAttribute::make('taxonomable_type', app('amethyst')->getDataNames())
                 ->setRequired(true),
             Attributes\MorphToAttribute::make('taxonomable_id')
                 ->setRelationKey('taxonomable_type')
                 ->setRelationName('taxonomable')
-                ->setRelations(app('amethyst')->getMorphRelationable('taxonomable', 'taxonomable'))
+                ->setRelations(app('amethyst')->getDataManagers())
                 ->setRequired(true),
             Attributes\CreatedAtAttribute::make(),
             Attributes\UpdatedAtAttribute::make(),
