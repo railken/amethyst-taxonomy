@@ -26,7 +26,7 @@ class TaxonomableSchema extends Schema
                 ->setRelationName('taxonomy')
                 ->setRelationManager(TaxonomyManager::class)
                 ->setRequired(true),
-            Attributes\EnumAttribute::make('taxonomable_type', app('amethyst')->getDataNames())
+            \Amethyst\Core\Attributes\DataNameAttribute::make('taxonomable_type')
                 ->setRequired(true),
             Attributes\MorphToAttribute::make('taxonomable_id')
                 ->setRelationKey('taxonomable_type')
